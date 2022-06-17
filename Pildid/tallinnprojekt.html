@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+
+    <title>Tallinn</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display SC', serif;
+            font-size: 55px;
+            color: rgb(228, 226, 226);
+            text-align: center;
+            background-color: rgb(63, 60, 60, 0.7);
+            border: black 3px solid;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .taust {
+            /*taustapildi allikas:https://wallpapercave.com/w/wp4305823 */
+            background-image: url(meelelahutusmust2.png);
+            height: 100vh;
+            width: 100%;
+            display: table;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #avaleht {
+            background-image: url("meelelahutus.png");
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            display: table;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #majutus {
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            display: table;
+            background-attachment: fixed;
+        }
+
+        #vaatamisv {
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            display: table;
+            background-attachment: fixed;
+        }
+
+        #meelelahutus {
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            display: table;
+            background-attachment: fixed;
+        }
+
+        #maitse {
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            display: table;
+            background-attachment: fixed;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #riba {
+            background-color: rgb(63, 60, 60, 0.7);
+            height: 120px;
+            border: black 3px solid;
+            border-radius: 5px;
+
+        }
+
+        #tall {
+            padding: 15px;
+            margin: 5px;
+        }
+
+        /*footer*/
+        footer {
+            background-color: rgb(63, 60, 60);
+            height: 200px;
+            width: 100%;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #kontakt {
+            height: 100px;
+            padding: 50px;
+
+        }
+
+        /*top nupp*/
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgb(68, 63, 63);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: rgb(15, 14, 14);
+        }
+
+        /*avaleht*/
+
+        iframe {
+            width: 50%;
+            justify-content: center;
+
+        }
+
+        .container {
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            bottom: 100px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .text {
+            background-color: rgb(63, 60, 60, 0.7);
+            border: black 3px solid;
+            width: 60%;
+            font-size: 36px;
+            font-family: 'Cardo', serif;
+            padding: 20px;
+            margin: auto;
+            margin-top: 120px;
+            text-align: center;
+            color: rgb(228, 226, 226);
+
+        }
+
+        /*kolm kasti*/
+        .kast {
+            margin: auto;
+            margin-top: 150px;
+            width: 100%;
+            max-width: 1100px;
+            min-width: 800px;
+            align-items: center;
+            display: flex;
+            position: relative;
+        }
+
+        .kastid {
+            display: inline-block;
+            width: 25%;
+            border: 3px solid rgb(8, 5, 5);
+            padding: 10px;
+            height: 60vh;
+            background: rgb(226, 231, 226, 0.8);
+            margin: 25px;
+            position: relative;
+
+        }
+
+        .kast div {
+            flex: 1;
+        }
+
+        .kastOverlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #060707;
+            opacity: 60%;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+        }
+
+        .yks:hover .kastOverlay {
+            height: 20%;
+        }
+
+        .ruut:hover .kastOverlay {
+            height: 20%;
+        }
+
+        .kolm:hover .kastOverlay {
+            height: 20%;
+        }
+
+        .kastid:hover .kastOverlay {
+            height: 20%;
+        }
+
+        .kastText {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Cardo', serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /*menüü*/
+        .overlay {
+            height: 0;
+            width: 25%;
+            position: fixed;
+            z-index: 100;
+            top: 40;
+            right: 0;
+            background-color: rgb(20, 20, 20);
+            background-color: rgba(20, 20, 20, 0.9);
+            transition: 0.5s;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        #nupp {
+            float: right;
+            margin-top: 28px;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            text-decoration: none;
+            font-size: 34px;
+            font-family: 'Cardo', serif;
+            color: #818181;
+            display: block;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+
+        }
+
+        /*sisu*/
+        #fotografiska {
+            /*Pildi allikas:https://flavoursofestonia.com/2020/12/02/fotografiska-restoran-pooras-ara/  */
+            background-image: url("fotografiska.jpg");
+            background-size: cover;
+        }
+
+        #oldehansa {
+            /*Pildi allikas:https://www.oldehansa.ee/galerii/galerii-1/oh10_-ii-korrus/ */
+            background-image: url("oldehansa.png");
+            background-size: cover;
+        }
+
+        #brewdog {
+            /*Pildi allikas:https://www.tripadvisor.co.uk/Restaurant_Review-g274958-d12850325-Reviews-Brewdog_Tallinn-Tallinn_Harju_County.html  */
+            background-image: url("brewdog.png");
+            background-size: cover;
+        }
+
+        #margareeta {
+            /*Pildi allikas:https://www.nordicexperience.com/?attachment_id=13545&lang=et  */
+            background-image: url("margareeta1.png");
+            background-size: cover;
+        }
+
+        #katariina {
+            /*Pildi allikas:https://www.nordicexperience.com/?attachment_id=13554  */
+            background-image: url("katariina1.png");
+            background-size: cover;
+        }
+
+        #kai {
+            /*Pildi allikas:https://kai.center/ */
+            background-image: url("kai.png");
+            background-size: cover;
+        }
+
+        #pilt1 {
+            background-image: url(seikluspark.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* https://www.puhkaeestis.ee/et/pirita-seikluspark */
+        #pilt2 {
+            background-image: url(t1.jpg);
+            background-position: 20%;
+        }
+
+        /* https://www.puhkaeestis.ee/et/vaateratas-skywheel-of-tallinn */
+        #pilt3 {
+            background-image: url(saun.jpg);
+            background-position: 40%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* https://visittallinn.ee/est/k%C3%BClastaja/mida-teha/k%C3%BClasta/spaad/180313/pakri-paruni-kumblustunn-ja-saun */
+        #pilt4 {
+            background-image: url(kapsel.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 40%;
+        }
+
+        /* https://capsulehostels.eu/en/gallery/ */
+        #pilt5 {
+            background-image: url(iglu.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 90%;
+        }
+
+        /* https://iglupark.com/iglusaun/ */
+        #pilt6 {
+            background-image: url(konteiner.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* https://www.hektorstay.com/container/en/gallery/ */
+
+        @media screen and (max-width: 1150px) {
+            .overlay {
+                width: 100%;
+            }
+
+            .overlay a {
+                font-size: 34px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        @media screen and (min-width: 2400px) {
+            .container {
+                height: 550px;
+            }
+
+            iframe {
+                height: 550px;
+            }
+        }
+
+        @media screen and (min-height: 2400px) {
+            .container {
+                height: 550px;
+            }
+
+            iframe {
+                height: 550px;
+            }
+        }
+
+        @media screen and (max-height: 900px) {
+            .container {
+                visibility: hidden;
+            }
+
+            iframe {
+                visibility: hidden;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+
+            .container {
+                visibility: hidden;
+            }
+
+            iframe {
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Üles</button>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#avaleht">Avaleht</a>
+            <a href="#majutus">Majutus</a>
+            <a href="#vaatamisv">Vaatamisväärsused</a>
+            <a href="#maitse">Maitseelamused</a>
+            <a href="#meelelahutus">Meelelahutus</a>
+            <a href="#footer">Kontakt</a>
+        </div>
+    </div>
+
+    <span id="nupp" style="z-index:100;font-size:50px;cursor:pointer;position:fixed;float:right;left:95%;"
+        onclick="openNav()">&#9776; </span>
+
+    <div id="avaleht">
+        <div id="riba">
+            <img id="tall" src="Group 1 1.svg">
+        </div>
+
+
+        <div class="text">
+            Tallinn on ilus ja nauditav igal aastaajal.
+            Siit leiad põnevad kohad, mida võiksid Tallinnas külastada.<br>
+            Võta aega Tallinnas rändamiseks!
+
+        </div>
+    </div>
+    <div class="container">
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68141.28057556596!2d24.741322773207756!3d59.44677911346645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46929499df5616bf%3A0x400b36d18fc6270!2sTallinn!5e0!3m2!1set!2see!4v1644482446873!5m2!1set!2see"
+            width="820" height="370" style="border: 3px solid black;" allowfullscreen="" loading="lazy"></iframe>
+
+    </div>
+    <div class="taust">
+        <div id="majutus">
+
+            <h1>Majutus</h1>
+
+            <div class="kast">
+                <div id="pilt4" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://capsulehostels.eu/" target="_blank">Capsule Hostels<br>
+                                Pärnu mnt 106, Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="pilt5" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://iglupark.com/" target="_blank">Iglupark<br>Noblessner
+                                Sadam,
+                                Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="pilt6" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://www.hektorstay.com/" target="_blank">Hektor
+                                Konteinerhotell<br>
+                                Telliskivi 62, Tallinn</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="vaatamisv">
+
+            <h1>Vaatamisväärsused</h1>
+            <div class="kast">
+                <div id="margareeta" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://meremuuseum.ee/paksmargareeta/" target="_blank">Paks
+                                Margareeta<br> Pikk 70, Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="katariina" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://www.katariinagild.eu/ajaloost/" target="_blank">Katariina
+                                käik<br> Vene 12, Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="kai" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://kai.center/" target="_blank">Kai kunstikeskus<br> Peetri
+                                12,
+                                Tallinn</a></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="maitse">
+            <h1>Maitseelamused</h1>
+            <div class="kast">
+                <div id="oldehansa" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a
+                                href="https://www.oldehansa.ee/et/hermine-saatis-mind/?gclid=Cj0KCQiA3rKQBhCNARIsACUEW_YDuhQg5iBie10-rpHtBWr4BQQuzEkwsF3GzgPFPvBYWFbcO8vwZVEaAkanEALw_wcB"
+                                target="_blank">Olde Hansa<br> Vana turg 1, Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="fotografiska" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://www.fotografiska.com/tallinn/sook-jook/87/"
+                                target="_blank">Fotografiska restoran<br>Telliskivi 60a-8, Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="brewdog" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://www.brewdog.com/uk/bars/global/Tallinn"
+                                target="_blank">BrewDog Tallinn<br>Rotermanni 2, Tallinn</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="meelelahutus">
+
+            <h1>Meelelahutus</h1>
+            <div class="kast">
+                <div id="pilt1" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://piritaseikluspark.ee/" target="_blank">Pirita
+                                seikluspark<br>
+                                Liiviku 4, Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="pilt2" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a href="https://t1tallinn.com/skypark/skywheel-of-tallinn-vaateratas/"
+                                target="_blank">
+                                T1 vaateratas<br>Peterburi tee 2, Tallinn</a></div>
+                    </div>
+                </div>
+                <div id="pilt3" class="kastid">
+                    <div class="kastOverlay">
+                        <div class="kastText"><a
+                                href="https://visittallinn.ee/est/k%C3%BClastaja/mida-teha/k%C3%BClasta/spaad/180313/pakri-paruni-kumblustunn-ja-saun"
+                                target="_blank">Pakri Paruni kümblustünn ja saun<br>Majaka tee 43, Tallinn</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="image-container">
+            <a href=""><img id="kontakt" src="insta.png"></a>
+        </div>
+    </footer>
+    <script>
+        //nupp
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        //menüü
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
+</body>
+
+</html>
