@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym</title>
+    <link rel="stylesheet" type="text/css" href="pohi.css">
+</head>
+
+<body>
+    <div class="container">
+    <div class="topnavbar">
+        <img src="pildid/logo.png" class="logo" >
+       <nav>
+        <ul>
+            <li><a href="#treeningud">Workouts</a></li>
+            <li><a href="#location">Gym Locations</a></li>
+            <li><a href="#why">Our Why</a></li>
+        </ul>
+       </nav>
+       <img src="pildid/menu.png" class="menu-icon">
+    </div>
+</div>
+<hr>
+    <p class="intro-text">Whether you think you can or you think you can't, you're right!</p>
+    <div class="image-container">
+        <div class="text">JUST DO IT</div>
+    </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Tallinn</a>
+        <a href="#">Tartu</a>
+        <a href="#">Pärnu</a>
+        <a href="#">Narva</a>
+      </div>
+      
+      <div id="main">
+        <button  id="location" class="openbtn" onclick="openNav()">Gym Locations</button>  
+      
+      </div>
+      <h1 id="workout">Click on the buttons below to see different workouts</h1>
+      <hr>
+      <div id="treeningud">
+      <div class="buttons">
+      <a href=" https://www.menshealth.com/fitness/a19537383/best-upperbody-exercises-youre-not-doing/" target="_blank"><button class="button 1" >Upper Body</button></a>
+      <a href="https://barbend.com/best-lower-body-exercises/" target="_blank"><button class="button 2">Lower Body</button></a>
+      <a href="https://www.healthline.com/health/fitness/leg-workout" target="_blank"><button class="button 3">Leg workouts</button></a>
+    </div>
+    </div>
+    <br><br><br>
+    <footer>
+      <div class="about">
+      <p id="why">Exercise is defined as any movement that makes your muscles work and requires your body to burn calories.
+        There are many types of physical activity, including swimming, running, jogging, walking, and dancing, to name a few.
+        Being active has been shown to have many health benefits, both physically and mentally. 
+        It may even help you live longer.Everyone can benefit from physical activity. 
+        For most people, it is possible to begin exercising on your own at a slow pace. 
+        If you have never exercised before, start with a 10-minute period of light exercise. 
+        A brisk walk every day is a good first exercise. Slowly increase how hard you exercise and for how long.</p>
+</div>
+    </footer>
+      <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+</body>
+
+</html>
